@@ -1,0 +1,11 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+@fontName          : 'Raleway';
+@headerFont        : @fontName, sans-serif;
+@pageFont          : @fontName, sans-serif;
+@goolgeFontName    : @fontName;
+@importGoogleFonts : true;
+@googleProtocol    : 'https://';
+@googleFontRequest : 'Raleway:400,500
