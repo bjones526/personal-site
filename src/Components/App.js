@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../App.scss";
+import "../scss/App.scss";
 import { Container, Menu } from "semantic-ui-react";
 import "../semantic/dist/semantic.min.css";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';

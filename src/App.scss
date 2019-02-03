@@ -1,56 +1,11 @@
+@import 'home';
+
 .bailey-container {
   text-align: center;
 
   h1 {
     font-size: 10em;
-  }
-}
-
-.ui.container.lights {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  
-  svg {
-    height: 15rem;
-    width: auto;
-  }
-
-  .light-ray {
-    fill: none;
-    stroke: #FBB03B; 
-    stroke-width: 24.893; 
-    stroke-miterlimit: 10;
-  }
-
-  .bulb {
-    fill: #FBB03B;
-  }
-
-  .bulb-highlight {
-    fill :#FFC06C;
-  }
-
-  .filament {
-    stroke:#FFF;
-  }
-
-  .off {
-    .light-ray {
-      stroke: none;
-    }
-
-    .bulb {
-      fill: #E6E6E6;
-    }
-
-    .bulb-highlight {
-      fill: #CCC;
-    }
-
-    .filament {
-      stroke: #000;
-    }
+    color: #00004d;
   }
 }
 
@@ -59,6 +14,10 @@
   color: #fff;
   background-color: #000;
   height: 100vh;
+
+  h1 {
+    color: #b3b3ff;
+  }
 }
 
 //animations

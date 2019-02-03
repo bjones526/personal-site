@@ -87,6 +87,7 @@ class Home extends Component {
                         className={light1 ? "" : "off"}
                         rotation="135"
                         onClick={(event) => this.handleLightClick(event, "light1")} />
+                    <p>Click the lights to interact.</p>
                     <LightBulb id='light2'
                         className={light2 ? "" : "off"}
                         rotation="-135"
@@ -110,11 +111,10 @@ class Home extends Component {
                         </h1>
                     </div>
                     <p>Hi there! I'm a software engineer with strong expertise in front-end development.</p>
-                    <p>Click the lights to interact.</p>
                 </Container>
-                <Container>
-                    <p>Designed and implemented by Bailey Jones, 2019.</p>
-                    <p>Developed with react.js, semantic-ui, and <a href="http://bigspaceship.github.io/shine.js/">shine.js.</a> Ligtbulb svg originally by <a href="videoplasty.com">videoplasty.com</a> and used under creative commons license </p>
+                <Container className='credits'>
+                    <p>Developed with react.js, semantic-ui, and <a href="http://bigspaceship.github.io/shine.js/">shine.js.</a></p>
+                    <p>Ligtbulb svg originally by <a href="videoplasty.com">videoplasty.com</a> and used under creative commons license </p>
                 </Container>
             </Fragment>
         );
