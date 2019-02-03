@@ -1,0 +1,104 @@
+.bailey-container {
+  text-align: center;
+
+  h1 {
+    font-size: 10em;
+  }
+}
+
+.ui.container.lights {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+  svg {
+    height: 15rem;
+    width: auto;
+  }
+
+  .light-ray {
+    fill: none;
+    stroke: #FBB03B; 
+    stroke-width: 24.893; 
+    stroke-miterlimit: 10;
+  }
+
+  .bulb {
+    fill: #FBB03B;
+  }
+
+  .bulb-highlight {
+    fill :#FFC06C;
+  }
+
+  .filament {
+    stroke:#FFF;
+  }
+
+  .off {
+    .light-ray {
+      stroke: none;
+    }
+
+    .bulb {
+      fill: #E6E6E6;
+    }
+
+    .bulb-highlight {
+      fill: #CCC;
+    }
+
+    .filament {
+      stroke: #000;
+    }
+  }
+}
+
+//theming
+.spooky {
+  color: #fff;
+  background-color: #000;
+  height: 100vh;
+}
+
+//animations
+#computer-line-1 {
+  stroke: #36c;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: computer-line-1 15s linear forwards infinite;
+}
+
+#computer-line-2 {
+  stroke: #36c;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: computer-line-2 15s linear forwards infinite;
+}
+
+#computer-line-3 {
+  stroke: #36c;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: computer-line-3 15s linear forwards infinite;
+}
+
+@keyframes computer-line-1 {
+  0%  { stroke-dashoffset: 500;}
+  20% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes computer-line-2 {
+  0%  { stroke-dashoffset: 500;}
+  20% { stroke-dashoffset: 500; }
+  40% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes computer-line-3 {
+  0%  { stroke-dashoffset: 500;}
+  40% { stroke-dashoffset: 500; }
+  60% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
