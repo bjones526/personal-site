@@ -1,0 +1,25 @@
+@import 'home';
+@import 'about';
+
+.bailey-container {
+  text-align: center;
+
+  h1 {
+    color: #00004d;
+  }
+}
+
+.main-content {
+  padding-top: 10vh;
+}
+
+//theming
+.spooky {
+  color: #fff;
+  background-color: #000;
+  height: 100vh;
+
+  h1 {
+    color: #b3b3ff;
+  }
+}

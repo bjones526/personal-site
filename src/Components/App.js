@@ -13,21 +13,29 @@ class App extends Component {
     super()
 
     this.state = {
-      theme: ''
-    }
+      light1: true,
+      light2: true,
+  }
 
-    this.setTheme = this.setTheme.bind(this);
+    this.setLights = this.setLights.bind(this);
   }
 
   setTheme(theme) {
-    this.setState({theme: theme});
+    if(theme === 'spooky'){
+      document.body.classList.add(theme);
+    } else {
+      document.body.classList.remove('spooky');
+    }
+  }
+
+  setLights(id) {
+    this.setState({ [id]: !this.state[id] });
   }
 
   render() {
-    //todo lift state up for spooky theme
     return (
       <Router>
-        <div className={this.state.theme}>
+        <div>
           <div className="bailey-container">
             <Container>
               <Menu compact secondary stackable defaultActiveIndex='home'>
@@ -47,7 +55,7 @@ class App extends Component {
               </Menu>
             </Container>
             <div className="ui page grid">
-              <Route exact path="/" render={ () => (<Home setTheme={this.setTheme}/>)}/>
+              <Route exact path="/" render={ () => (<Home setTheme={this.setTheme} setLights={this.setLights} light1={this.state.light1} light2={this.state.light2}/>)}/>
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
             </div>

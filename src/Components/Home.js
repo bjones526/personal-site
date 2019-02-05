@@ -9,11 +9,6 @@ class Home extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            light1: true,
-            light2: true,
-        }
-
         this.shineLetters = [];
         this.config = new shinejs.Config({
             numSteps: 12,
@@ -39,9 +34,9 @@ class Home extends Component {
     handleLightClick(event, id) {
 
         let oppositeId = id === 'light1' ? 'light2' : 'light1';
-        let oppositeLight = this.state[oppositeId];
+        let oppositeLight = this.props[oppositeId];
         let oppositeLightCoords = document.getElementById(oppositeId).getBoundingClientRect();
-        let selectedLight = !this.state[id];
+        let selectedLight = !this.props[id];
         let selectedLightCoords = document.getElementById(id).getBoundingClientRect();
 
         if (!selectedLight && oppositeLight) {
@@ -70,16 +65,13 @@ class Home extends Component {
             })
             this.props.setTheme('');
         } else if (!selectedLight && !oppositeLight) {
-            //both lights are being turned off
             this.props.setTheme('spooky');
-
         }
-
-        this.setState({ [id]: !this.state[id] })
+        this.props.setLights(id);
     }
 
     render() {
-        let { light1, light2 } = this.state;
+        let { light1, light2 } = this.props;
         return (
             <Fragment>
                 <Container className="lights">
@@ -93,7 +85,7 @@ class Home extends Component {
                         rotation="-135"
                         onClick={(event) => this.handleLightClick(event, "light2")} />
                 </Container>
-                <Container>
+                <Container className='site-name'>
                     <div id="my-shine-object">
                         <h1>
                             <span className="shine-object">B</span>
@@ -113,8 +105,11 @@ class Home extends Component {
                     <p>Hi there! I'm a software engineer with strong expertise in front-end development.</p>
                 </Container>
                 <Container className='credits'>
-                    <p>Developed with react.js, semantic-ui, and <a href="http://bigspaceship.github.io/shine.js/">shine.js.</a></p>
-                    <p>Ligtbulb svg originally by <a href="videoplasty.com">videoplasty.com</a> and used under creative commons license </p>
+                    <p>Developed with <a href="https://reactjs.org/">react.js,</a> <a href="https://semantic-ui.com/">semantic-ui,</a> and <a href="http://bigspaceship.github.io/shine.js/">shine.js.</a></p>
+                    <br/>
+                    <p>Images:</p>
+                    <p>© videoplasty.com / <a href="https://commons.wikimedia.org/wiki/File:Light_Bulb_or_Idea_Flat_Icon_Vector.svg">Wikimedia Commons</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA-4.0</a></p>
+                    <p><a href="https://commons.wikimedia.org/wiki/File:Blue_computer_icon.svg">Wikimedia Commons</a> / <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC-BY-SA-3.0</a></p>
                 </Container>
             </Fragment>
         );

@@ -1,0 +1,73 @@
+
+
+.about {
+    
+    svg {
+        height: 8rem;
+        width: auto;
+        fill: #00004d;
+    }
+
+    img {
+      border: 15px solid #FBB038;
+    }
+}
+
+.spooky .about {
+  svg {
+    fill: #b3b3ff;
+  }
+  img {
+    border-color: #CCC; 
+  }
+  #computer-line-1,
+  #computer-line-2,
+  #computer-line-3 {
+    stroke: #b3b3ff;
+  }
+  .computer-screen {
+    fill: #000;
+  }
+}
+
+//animations
+#computer-line-1 {
+    stroke: #00004d;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: computer-line-1 15s linear forwards infinite;
+  }
+  
+  #computer-line-2 {
+    stroke:  #00004d;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: computer-line-2 15s linear forwards infinite;
+  }
+  
+  #computer-line-3 {
+    stroke: #00004d;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: computer-line-3 15s linear forwards infinite;
+  }
+  
+  @keyframes computer-line-1 {
+    0%  { stroke-dashoffset: 500;}
+    20% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 0; }
+  }
+  
+  @keyframes computer-line-2 {
+    0%  { stroke-dashoffset: 500;}
+    20% { stroke-dashoffset: 500; }
+    40% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 0; }
+  }
+  
+  @keyframes computer-line-3 {
+    0%  { stroke-dashoffset: 500;}
+    40% { stroke-dashoffset: 500; }
+    60% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 0; }
+  }
