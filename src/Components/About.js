@@ -4,8 +4,8 @@ import Computer from './Computer';
 
 class About extends Component {
 
-    showResume(){
-        return window.location.href = '/bailey_jones.pdf';
+    showResume() {
+        window.location.href = '/bailey_jones_resume.html';
     }
 
     render() {

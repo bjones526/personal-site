@@ -8,7 +8,7 @@
     }
     
     svg {
-      height: 15rem;
+      height: 7.5rem;
       width: auto;
     }
   
@@ -52,7 +52,7 @@
 
   .site-name {
     h1 {
-      font-size: 10rem;
+      font-size: 6rem;
     }
   }
   
@@ -64,3 +64,31 @@
       margin-bottom: 0
     }
   }
+
+  .name-container {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  /* breakpoints */
+  //tablet 723
+  //small 933
+  //large 1127
+
+  @media (min-width: 723px) {
+    .site-name {
+      h1 {
+        font-size: 10rem;
+      }
+    }
+
+    .ui.container.lights {
+      svg {
+        height: 15rem;
+      }   
+    }
+    .first-name-container {
+      margin-right: 3rem;
+    }
+  }
+  

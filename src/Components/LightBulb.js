@@ -9,7 +9,8 @@ class LightBulb extends Component {
      transform={`rotate(${this.props.rotation})`}
      className={this.props.className}
 	 onClick={this.props.onClick}
-	 id={this.props.id}>
+	 id={this.props.id}
+	 aria-label="light bulb">
 <g>
 	<circle fill="#E6E6E6" cx="478.7" cy="792.5" r="35.9"/>
 	<path className='bulb' d="M488.4,222.2c-2.7-0.1-5.3-0.2-8-0.2c-2.6,0-5.2,0.1-7.9,0.2c-130.1,5.2-227.4,145.4-170,262.3l2.7,5.4

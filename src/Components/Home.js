@@ -20,7 +20,6 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        //todo draw diffuse shadows for when both lights are on (instead of from top left corner)
         let letters = document.getElementsByClassName("shine-object");
         for (let i = 0; i < letters.length; i++) {
             let shine = new Shine(letters[i], this.config);
@@ -88,18 +87,21 @@ class Home extends Component {
                 <Container className='site-name'>
                     <div id="my-shine-object">
                         <h1>
+                            <span className ="name-container first-name-container">
                             <span className="shine-object">B</span>
                             <span className="shine-object">a</span>
                             <span className="shine-object">i</span>
                             <span className="shine-object">l</span>
                             <span className="shine-object">e</span>
                             <span className="shine-object">y</span>
-                            <span>&nbsp;</span>
+                            </span>
+                            <span className ="name-container">
                             <span className="shine-object">J</span>
                             <span className="shine-object">o</span>
                             <span className="shine-object">n</span>
                             <span className="shine-object">e</span>
                             <span className="shine-object">s</span>
+                            </span>
                         </h1>
                     </div>
                     <p>Hi there! I'm a software engineer with strong expertise in front-end development.</p>
