@@ -57,7 +57,8 @@ class App extends Component {
             <div className="ui page grid">
               <Route exact path="/" render={ () => (<Home setTheme={this.setTheme} setLights={this.setLights} light1={this.state.light1} light2={this.state.light2}/>)}/>
               <Route path="/about" component={About} />
-              <Route path="/contact" component={Contact} />
+              <Route path="/contact" component={() => (<Contact open={false}/>)}  />
+              <Route path="/contact/submission" component={() => (<Contact open={true}/>)} />
             </div>
           </div>
         </div>
