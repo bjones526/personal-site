@@ -1,7 +1,20 @@
 import React, { Component } from "react";
-import { Grid, Container, Icon } from "semantic-ui-react";
-import Dialog from '@material-ui/core/Dialog';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import { Dialog, DialogTitle, Container, TextField, Button } from '@material-ui/core';
+import { withStyles } from '@material-ui/styles';
+
+const styles = {
+    container: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        flexDirection: 'column',
+    },
+    formField: {
+        marginLeft: "auto",
+        marginRight: "auto",
+        marginBottom: "1rem",
+        width: 300,
+    }
+};
 
 class Contact extends Component {
 
@@ -15,10 +28,6 @@ class Contact extends Component {
         this.handleClose = this.handleClose.bind(this);
     }
 
-    onIconClick(link) {
-        window.location.href = link
-    }
-
     handleClose() {
         this.setState({ open: false });
     }
@@ -26,32 +35,34 @@ class Contact extends Component {
     render() {
         return (
             <Container className="main-content contact">
-                <Grid stackable>
-                    <Grid.Row columns={2}>
-                        <Grid.Column textAlign="center" verticalAlign="middle" width={8}>
-                            <Icon aria-label="linkedIn" name="linkedin" link size="huge" onClick={() => { this.onIconClick("https://www.linkedin.com/in/bailey-jones-06216877/") }}></Icon>
-                        </Grid.Column>
-                        <Grid.Column textAlign="left" width={8}>
-                            <h1>Contact</h1>
-                            <p>Let's get in touch! You can leave a note here or find me on <a href="https://www.linkedin.com/in/bailey-jones-06216877/">LinkedIn.</a></p>
-                            <form name="contact" method="post" action="/contact/submission">
-                                <input type="hidden" name="form-name" value="contact" />
-                                <p>
-                                    <label>Your Name: <input type="text" name="name" /></label>
-                                </p>
-                                <p>
-                                    <label>Your Email: <input type="email" name="email" /></label>
-                                </p>
-                                <p>
-                                    <label>Message: <textarea name="message"></textarea></label>
-                                </p>
-                                <p>
-                                    <button type="submit">Send</button>
-                                </p>
-                            </form>
-                        </Grid.Column>
-                    </Grid.Row>
-                </Grid>
+                <h1>Contact</h1>
+                <p>Let's get in touch! You can leave a note here or find me on <a href="https://www.linkedin.com/in/bailey-jones-06216877/">LinkedIn.</a></p>
+                <form className={this.props.classes.container} name="contact" method="post">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <TextField
+                        id="name"
+                        name="name"
+                        label="Your Name:"
+                        className={this.props.classes.formField}
+                    />
+                    <TextField
+                        id="email"
+                        name="email"
+                        type="email"
+                        label="Your Email:"
+                        className={this.props.classes.formField}
+                    />
+                    <TextField
+                        id="message"
+                        name="messate"
+                        label="Message:"
+                        margin="normal"
+                        multiline
+                        rows="4"
+                        className={this.props.classes.formField}
+                    />
+                    <Button className={this.props.classes.formField} type="submit">Send</Button>
+                </form>
                 <Dialog open={this.state.open} onClose={this.handleClose}>
                     <DialogTitle>Thanks for the message!</DialogTitle>
                 </Dialog>
@@ -60,4 +71,4 @@ class Contact extends Component {
     }
 }
 
-export default Contact;
+export default withStyles(styles)(Contact);

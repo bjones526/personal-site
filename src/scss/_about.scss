@@ -1,7 +1,4 @@
-
-
 .about {
-    
     svg {
         height: 8rem;
         width: auto;
@@ -10,6 +7,12 @@
 
     img {
       border: 15px solid #FBB038;
+      border-radius: 50%;
+      max-width: 55%;
+    }
+
+    .about-text {
+      text-align: left;
     }
 }
 
