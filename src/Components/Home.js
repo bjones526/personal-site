@@ -1,7 +1,7 @@
 /*global Shine*/
 /*global shinejs*/
 import React, { Component, Fragment } from "react";
-import { Container } from "semantic-ui-react";
+import { Container } from "@material-ui/core";
 import LightBulb from "./LightBulb";
 
 class Home extends Component {
@@ -87,28 +87,28 @@ class Home extends Component {
                 <Container className='site-name'>
                     <div id="my-shine-object">
                         <h1>
-                            <span className ="name-container first-name-container">
-                            <span className="shine-object">B</span>
-                            <span className="shine-object">a</span>
-                            <span className="shine-object">i</span>
-                            <span className="shine-object">l</span>
-                            <span className="shine-object">e</span>
-                            <span className="shine-object">y</span>
+                            <span className="name-container first-name-container">
+                                <span className="shine-object">B</span>
+                                <span className="shine-object">a</span>
+                                <span className="shine-object">i</span>
+                                <span className="shine-object">l</span>
+                                <span className="shine-object">e</span>
+                                <span className="shine-object">y</span>
                             </span>
-                            <span className ="name-container">
-                            <span className="shine-object">J</span>
-                            <span className="shine-object">o</span>
-                            <span className="shine-object">n</span>
-                            <span className="shine-object">e</span>
-                            <span className="shine-object">s</span>
+                            <span className="name-container">
+                                <span className="shine-object">J</span>
+                                <span className="shine-object">o</span>
+                                <span className="shine-object">n</span>
+                                <span className="shine-object">e</span>
+                                <span className="shine-object">s</span>
                             </span>
                         </h1>
                     </div>
                     <p>Hi there! I'm a software engineer with strong expertise in front-end development.</p>
                 </Container>
                 <Container className='credits'>
-                    <p>Developed with <a href="https://reactjs.org/">react.js,</a> <a href="https://semantic-ui.com/">semantic-ui,</a> and <a href="http://bigspaceship.github.io/shine.js/">shine.js.</a></p>
-                    <br/>
+                    <p>Developed with <a href="https://reactjs.org/">react.js,</a> <a href="https://material-ui.com">material-ui,</a> and <a href="http://bigspaceship.github.io/shine.js/">shine.js.</a></p>
+                    <br />
                     <p>Images:</p>
                     <p>© videoplasty.com / <a href="https://commons.wikimedia.org/wiki/File:Light_Bulb_or_Idea_Flat_Icon_Vector.svg">Wikimedia Commons</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC-BY-SA-4.0</a></p>
                     <p><a href="https://commons.wikimedia.org/wiki/File:Blue_computer_icon.svg">Wikimedia Commons</a> / <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC-BY-SA-3.0</a></p>

@@ -3,17 +3,36 @@
 
 .bailey-container {
   text-align: center;
-
-  h1 {
-    color: #00004d;
-  }
 }
 
 .main-content {
   padding-top: 10vh;
 }
 
-//theming
+h1 {
+  color: #00004d; 
+}
+
+a {
+  color: #3673b0 !important;
+
+  &:hover, &:active {
+    color: #244d75 !important;
+  } 
+}
+
+.navigation {
+  margin-top: 1.5rem;
+
+  a {
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+
+}
+
+
+//theming when lights are off
 .spooky {
   color: #fff;
   background-color: #000;
@@ -21,5 +40,13 @@
 
   h1 {
     color: #b3b3ff;
+  }
+
+  a {
+    color: #76a6d5 !important;
+  
+    &:hover, &:active {
+      color: #4f8cc9 !important;
+    } 
   }
 }
