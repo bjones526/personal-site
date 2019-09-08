@@ -4,16 +4,23 @@ class LightBulb extends Component {
 
     render() {
         return (
-<svg version="1.1" id="Layer_1" x="0px" y="0px"
+<svg version="1.1" x="0px" y="0px"
 	 viewBox="0 0 960 960" style={{EnableBackground: "new 0 0 960 960"}}
      transform={`rotate(${this.props.rotation})`}
      className={this.props.className}
-	 onClick={this.props.onClick}
 	 id={this.props.id}
 	 aria-label="light bulb">
 <g>
 	<circle fill="#E6E6E6" cx="478.7" cy="792.5" r="35.9"/>
-	<path className='bulb' d="M488.4,222.2c-2.7-0.1-5.3-0.2-8-0.2c-2.6,0-5.2,0.1-7.9,0.2c-130.1,5.2-227.4,145.4-170,262.3l2.7,5.4
+	<path onClick={this.props.onClick} 
+			onKeyPress={this.props.onClick}
+			onFocus={this.props.handleFocus}
+			onBlur={this.props.handleUnfocus}
+			onMouseEnter={this.props.handleFocus}
+			onMouseLeave={this.props.handleUnfocus}
+			tabIndex="0"
+			className='bulb' 
+			d="M488.4,222.2c-2.7-0.1-5.3-0.2-8-0.2c-2.6,0-5.2,0.1-7.9,0.2c-130.1,5.2-227.4,145.4-170,262.3l2.7,5.4
 		c30.5,52.5,70.4,38.5,70.4,98.3v42.3h210.6v-42.8c0-59.5,36-47.4,65.6-97.5l3.1-6.4C711.2,366.8,618.1,227.4,488.4,222.2z"/>
 	<g>
 		<path className='bulb-highlight' d="M488.4,222.2c-2.7-0.1-5.3-0.2-8-0.2c-2.6,0-5.2,0.1-7.9,0.2c-57.2,2.3-108,30.6-142.1,71.6

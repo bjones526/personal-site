@@ -21,6 +21,11 @@
   
     .bulb {
       fill: #FBB03B;
+
+      &:active, &:hover, &:focus {
+        cursor: pointer;
+        outline: none;
+      }
     }
   
     .bulb-highlight {
@@ -47,6 +52,15 @@
       .filament {
         stroke: #000;
       }
+    }
+
+    .light1.focus {
+      transition: all .2s ease-in-out;
+      transform: rotate(135deg) scale(1.1);
+    }
+    .light2.focus {
+      transition: all .2s ease-in-out;
+      transform: rotate(-135deg) scale(1.1);
     }
   }
 
