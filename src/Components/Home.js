@@ -3,6 +3,7 @@
 import React, { Component, Fragment } from "react";
 import { Container } from "@material-ui/core";
 import LightBulb from "./LightBulb";
+import classNames from "classnames";
 
 class Home extends Component {
 
@@ -16,7 +17,13 @@ class Home extends Component {
             shadowRGB: new shinejs.Color(0, 0, 0)
         });
 
+        this.state = {
+            light1hover: false,
+            light2hover: false
+        }
+
         this.handleLightClick = this.handleLightClick.bind(this);
+        this.handleLightUnfocus = this.handleLightUnfocus.bind(this);
     }
 
     componentDidMount() {
@@ -28,6 +35,14 @@ class Home extends Component {
             shine.draw();
             this.shineLetters.push(shine);
         }
+    }
+
+    handleLightFocus(event, id) {
+        this.setState({[`${id}hover`]: true})  
+    }
+
+    handleLightUnfocus(event, id) {
+        this.setState({[`${id}hover`]: false}) 
     }
 
     handleLightClick(event, id) {
@@ -71,18 +86,34 @@ class Home extends Component {
 
     render() {
         let { light1, light2 } = this.props;
+
+        let light1Classes = classNames({
+            light1: true,
+            'off': !light1,
+            'focus': this.state.light1hover
+        });
+
+        let light2Classes = classNames({
+            light2: true,
+            'off': !light2,
+            'focus': this.state.light2hover
+        });
         return (
             <Fragment>
                 <Container className="lights">
                     <LightBulb id='light1'
-                        className={light1 ? "" : "off"}
+                        className={light1Classes}
                         rotation="135"
-                        onClick={(event) => this.handleLightClick(event, "light1")} />
+                        onClick={(event) => this.handleLightClick(event, "light1")} 
+                        handleFocus={(event) => this.handleLightFocus(event, "light1")}
+                        handleUnfocus={(event) => this.handleLightUnfocus(event, "light1")}/>
                     <p>Click the lights to interact.</p>
                     <LightBulb id='light2'
-                        className={light2 ? "" : "off"}
+                        className={light2Classes}
                         rotation="-135"
-                        onClick={(event) => this.handleLightClick(event, "light2")} />
+                        onClick={(event) => this.handleLightClick(event, "light2")} 
+                        handleFocus={(event) => this.handleLightFocus(event, "light2")}
+                        handleUnfocus={(event) => this.handleLightUnfocus(event, "light2")}/>
                 </Container>
                 <Container className='site-name'>
                     <div id="my-shine-object">
