@@ -12,7 +12,7 @@ class LightBulb extends Component {
 	 aria-label="light bulb">
 <g>
 	<circle fill="#E6E6E6" cx="478.7" cy="792.5" r="35.9"/>
-	<path onClick={this.props.onClick} 
+	<path onClick={this.props.onClick}
 			onKeyPress={this.props.onClick}
 			onFocus={this.props.handleFocus}
 			onBlur={this.props.handleUnfocus}
