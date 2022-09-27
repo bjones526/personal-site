@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Dialog, DialogTitle, Container, TextField, Button } from '@material-ui/core';
-import { withStyles } from '@material-ui/styles';
+import { Dialog, DialogTitle, Container, TextField, Button } from '@mui/material';
+//import { withStyles } from '@mui/styles';
 
-const styles = {
+/*const styles = {
     container: {
         display: 'flex',
         flexWrap: 'wrap',
@@ -14,7 +14,7 @@ const styles = {
         marginBottom: "1rem",
         width: 300,
     }
-};
+};*/
 
 class Contact extends Component {
 
@@ -37,20 +37,18 @@ class Contact extends Component {
             <Container className="main-content contact">
                 <h1>Contact</h1>
                 <p>Let's get in touch! You can leave a note here or find me on <a href="https://www.linkedin.com/in/bailey-jones-06216877/">LinkedIn.</a></p>
-                <form className={this.props.classes.container} name="contact" method="post">
+                <form name="contact" method="post">
                     <input type="hidden" name="form-name" value="contact" />
                     <TextField
                         id="name"
                         name="name"
                         label="Your Name:"
-                        className={this.props.classes.formField}
                     />
                     <TextField
                         id="email"
                         name="email"
                         type="email"
                         label="Your Email:"
-                        className={this.props.classes.formField}
                     />
                     <TextField
                         id="message"
@@ -59,9 +57,8 @@ class Contact extends Component {
                         margin="normal"
                         multiline
                         rows="4"
-                        className={this.props.classes.formField}
                     />
-                    <Button className={this.props.classes.formField} type="submit">Send</Button>
+                    <Button type="submit">Send</Button>
                 </form>
                 <Dialog open={this.state.open} onClose={this.handleClose}>
                     <DialogTitle>Thanks for the message!</DialogTitle>
@@ -71,4 +68,4 @@ class Contact extends Component {
     }
 }
 
-export default withStyles(styles)(Contact);
+export default Contact;

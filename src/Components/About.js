@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Button, Container } from "@material-ui/core";
+import { Grid, Button, Container } from "@mui/material";
 import Computer from './Computer';
 
 class About extends Component {
@@ -13,13 +13,12 @@ class About extends Component {
             <Container className='about main-content'>
                 <Grid container spacing={3}>
                     <Grid item xs={12} sm={6}>
-                        <img src='/profile.jpg' alt="profile photo of Bailey Jones" />
+                        <img src='/profile.jpg' alt="head shot of Bailey Jones" />
                     </Grid>
                     <Grid item xs={12} sm={5} className="about-text">
                         <h1>About</h1>
-                        <p>I'm currently a senior developer at Fidelity. Before that, I was a front end developer for IBM Hybrid Cloud. 
-                            Most of my experience has been with React and Redux. I've also developed in Angular and Vue, and I've written backend apps with node express.</p>
-                        <p>Check out <a href="https://css-tricks.com/author/baileyjones/">my author page on css tricks</a> or my <a href="https://github.com/bjones526">github profile</a> 
+                        <p>I'm currently a senior software engineer at Salesforce, where I develop with Javascript and Node. Before that, I was a front end developer at Fidelity and IBM Hybrid Cloud.</p>
+                        <p>Check out <a href="https://css-tricks.com/author/baileyjones/">my author page on css tricks</a> or my <a href="https://github.com/bjones526"> github profile</a> 
                             to get a sense of topics I'm interested in!</p>
                         <p>I graduated from UNC's master's in Information Science program in 2016.
                             My master's paper focused on thumbnails for archival collections online, which I presented at the 2017 Joint Conference for Digital Libraries in Toronto.
