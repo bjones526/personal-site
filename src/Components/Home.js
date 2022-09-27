@@ -1,7 +1,7 @@
 /*global Shine*/
 /*global shinejs*/
 import React, { Component, Fragment } from "react";
-import { Container } from "@material-ui/core";
+import { Box, Container } from "@mui/material";
 import LightBulb from "./LightBulb";
 import classNames from "classnames";
 
@@ -100,7 +100,7 @@ class Home extends Component {
         });
         return (
             <Fragment>
-                <Container className="lights">
+                <Box sx={{ display: 'flex' }} className="lights">
                     <LightBulb id='light1'
                         className={light1Classes}
                         rotation="135"
@@ -114,7 +114,7 @@ class Home extends Component {
                         onClick={(event) => this.handleLightClick(event, "light2")} 
                         handleFocus={(event) => this.handleLightFocus(event, "light2")}
                         handleUnfocus={(event) => this.handleLightUnfocus(event, "light2")}/>
-                </Container>
+                </Box>
                 <Container className='site-name'>
                     <div id="my-shine-object">
                         <h1>

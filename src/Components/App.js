@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import "../scss/App.scss";
-import { Container, Link } from "@material-ui/core";
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Link as RouterLink } from 'react-router-dom';
+import { Container, Link } from "@mui/material";
+import { Routes, Route, Link as RouterLink, Outlet } from "react-router-dom";
 import Home from './Home';
 import About from './About';
 import Contact from './Contact';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-const theme = createMuiTheme({
+const theme = createTheme({
   overrides: {
     MuiButton: {
       text: {
         backgroundColor: '#e0e1e2',
         borderRadius: 3,
+
         border: 0,
         color: 'rgba(0, 0, 0, .6)',
         height: '2rem',
@@ -23,6 +23,19 @@ const theme = createMuiTheme({
     },
   },
 });
+
+function Layout() {
+  return (
+    <div className="bailey-container">
+      <Container className="navigation">
+        <Link component={RouterLink} to="/">Home</Link>
+        <Link component={RouterLink} to="about">About</Link>
+        <Link component={RouterLink} to="contact">Contact</Link>
+      </Container>
+      <Outlet />
+  </div>
+  );
+}
 
 class App extends Component {
 
@@ -48,28 +61,23 @@ class App extends Component {
   setLights(id) {
     this.setState({ [id]: !this.state[id] });
   }
+  //TODO need to handle contact submission
+  //TODO route to resume.
 
   render() {
     return (
-      <MuiThemeProvider theme={theme}>
-        <Router>
+      <ThemeProvider theme={theme}>
           <div>
-            <div className="bailey-container">
-              <Container className="navigation">
-                <Link component={RouterLink} to="/">Home</Link>
-                <Link component={RouterLink} to="/about">About</Link>
-                <Link component={RouterLink} to="/contact">Contact</Link>
-              </Container>
-              <div>
-                <Route exact path="/" render={() => (<Home setTheme={this.setTheme} setLights={this.setLights} light1={this.state.light1} light2={this.state.light2} />)} />
-                <Route path="/about" render={() => (<About />)} />
-                <Route path="/contact" render={() => (<Contact open={false} />)} />
-                <Route path="/contact/submission" render={() => (<Contact open={true} />)} />
-              </div>
-            </div>
+            <Routes>
+              <Route path="/" element={<Layout />}>
+                <Route index element={<Home setTheme={this.setTheme} setLights={this.setLights} light1={this.state.light1} light2={this.state.light2}/>} />
+                <Route path="about" element={<About />} />
+                <Route path="contact" element={<Contact open={false} />} />
+                <Route path="contact/submission" element={<Contact open={true} />} />
+              </Route>
+            </Routes>
           </div>
-        </Router>
-      </MuiThemeProvider>
+      </ThemeProvider>
     );
   }
 }
