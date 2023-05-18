@@ -1,20 +1,5 @@
 import React, { Component } from "react";
 import { Dialog, DialogTitle, Container, TextField, Button } from '@mui/material';
-//import { withStyles } from '@mui/styles';
-
-/*const styles = {
-    container: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        flexDirection: 'column',
-    },
-    formField: {
-        marginLeft: "auto",
-        marginRight: "auto",
-        marginBottom: "1rem",
-        width: 300,
-    }
-};*/
 
 class Contact extends Component {
 
@@ -37,20 +22,20 @@ class Contact extends Component {
             <Container className="main-content contact">
                 <h1>Contact</h1>
                 <p>Let's get in touch! You can leave a note here or find me on <a href="https://www.linkedin.com/in/bailey-jones-06216877/">LinkedIn.</a></p>
-                <form name="contact" method="post">
+                <form name="contact" method="post" className="form-container">
                     <input type="hidden" name="form-name" value="contact" />
-                    <TextField
+                    <TextField className="formField"
                         id="name"
                         name="name"
                         label="Your Name:"
                     />
-                    <TextField
+                    <TextField className="form-field"
                         id="email"
                         name="email"
                         type="email"
                         label="Your Email:"
                     />
-                    <TextField
+                    <TextField className="form-field"
                         id="message"
                         name="messate"
                         label="Message:"
